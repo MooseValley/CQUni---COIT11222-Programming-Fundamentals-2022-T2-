@@ -1,0 +1,15 @@
+2022-T2
+
+Week	Topic
+Week 1 	Creating Java Programs; Using Data (Part 1)
+Week 2 	Using Data (Part 2); Methods
+Week 3 	Methods
+Week 4 	Classes and Objects
+Week 5 	Making decisions (Selection Statements)
+Week 6 	Looping
+Week 7 	Arrays
+Week 8 	Advanced Array Concepts
+Week 9	Characters, Strings and the StringBuilder
+Week 10	Exceptions
+Week 11	Files Input and Output
+Week 12	Design; Ethics; Review
