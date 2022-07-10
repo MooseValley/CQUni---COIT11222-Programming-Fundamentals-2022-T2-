@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # Mike O'Malley's COIT11222 Programming Fundamentals (2022-T2)
-=======
-# Mike O'Malley's COIT11134 Object Oriented Programming (2022-T1)
->>>>>>> e5845e73b9c9addb35c7bc3c91a32fdf2ca1174c
 
 All of my class work will be uploaded here.
 
@@ -13,11 +9,7 @@ This repo will include:
 * etc.
 
 ### Contact info:
-<<<<<<< HEAD
 * Unit Coordinator: Dr. Jacqueline Jarvis, Brisbane Campus, Contact: +61-07-3023-4238, Email: j.jarvis@cqu.edu.au
-=======
-* Unit Coordinator: Bruce McKenzie, Email: b.mckenzie@cqu.edu.au, Melbourne, Phone: 03 9616 0609.
->>>>>>> e5845e73b9c9addb35c7bc3c91a32fdf2ca1174c
 * Rocky Tutor: Mike O, email: m.omalley@cqu.edu.au
 
 ### Golden Rules for Success:
@@ -36,15 +28,9 @@ This repo will include:
 
 ### Useful links:
 
-<<<<<<< HEAD
 * **Course web page:** https://moodle.cqu.edu.au/course/view.php?id=37697
 
 * **This Github Repo:** https://github.com/MooseValley/Uni-COIT11222-Programming-Fundamentals-2022-T2
-=======
-* **Course web page:** https://moodle.cqu.edu.au/course/view.php?id=36018
-
-* **This Github Repo:** https://github.com/MooseValley/Uni-COIT11134-Object-Oriented-Programming-2022-T1
->>>>>>> e5845e73b9c9addb35c7bc3c91a32fdf2ca1174c
 
 * **Mike O'Malley's Java Videos** (many dozes of useful videos for Java programmers of all levels !  Includes all Java FX videos.):
 <br>http://tinyurl.com/MikesJavaVideos
