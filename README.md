@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Mike O'Malley's COIT11222 Programming Fundamentals (2022-T2)
 
 All of my class work will be uploaded here.
