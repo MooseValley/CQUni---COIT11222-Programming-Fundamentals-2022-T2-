@@ -28,7 +28,6 @@ This repo will include:
 
 ### Useful links:
 
-<<<<<<< HEAD
 * **Course web page:** https://moodle.cqu.edu.au/course/view.php?id=37697
 
 * **This Github Repo:** https://github.com/MooseValley/Uni-COIT11222-Programming-Fundamentals-2022-T2
