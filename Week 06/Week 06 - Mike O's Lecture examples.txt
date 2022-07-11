@@ -1,0 +1,33 @@
+******************************************************
+COIT11222 Programming Fundamentals (2022-T2)
+Week: 06
+Course WEB Page (Moodle):         https://moodle.cqu.edu.au/course/view.php?id=37697
+Course Coordinator:               Dr. Jacqueline Jarvis, Brisbane Campus, Contact: +61-07-3023-4238, Email: j.jarvis@cqu.edu.au
+Rocky Teacher (Part-Time):        Mike O'Malley, m.omalley@cqu.edu.au
+Mike O's GitHub for course/term:  https://github.com/MooseValley/Uni-COIT11222-Programming-Fundamentals-2022-T2
+Mike O'Malley's Java Videos (incl JavaFX, etc):            http://tinyurl.com/MikesJavaVideos
+Mike O'Malley's JavaFX + Netbeans + Scene Builder Videos:  http://tinyurl.com/MikesJavaFXVideos
+******************************************************
+
+ROAD MAP:
+Week 01 Creating Java Programs; Using Data (Part 1)
+Week 02 Using Data (Part 2); Methods
+Week 03 Methods
+Week 04 Classes and Objects
+Week 05 Making decisions (Selection Statements)
+Week 06 Looping    <--- YOU ARE HERE !
+Week 07 Arrays
+Week 08 Advanced Array Concepts
+Week 09	Characters, Strings and the StringBuilder
+Week 10	Exceptions
+Week 11	Files Input and Output
+Week 12	Design; Ethics; Review
+
+
+LAST WEEK: Week 05
+* Week 05 Making decisions (Selection Statements)
+
+THIS WEEK: Week 06
+* Week 06 Looping    <--- YOU ARE HERE !
+
+EOF.
