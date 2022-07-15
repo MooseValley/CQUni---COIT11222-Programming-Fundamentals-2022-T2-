@@ -27,4 +27,160 @@ Week 12	Design; Ethics; Review
 THIS WEEK: Week 01
 * Week 01 Creating Java Programs; Using Data (Part 1)    <--- YOU ARE HERE !
 
+
+
+2.	Use an example to explain the difference between a class and an object.
+
+
+public class Employee
+{
+}
+
+Class
+Type of data
+Can be made up of other data types - String, int, other clases that we create, etc
+
+
+Object
+Example or Instance of a class
+
+Employee Mike = new Employee (....);
+Employee Frankie = new Employee (....);
+
+Mike and Frankie and objects / instances / examples of Employee
+
+
+
+3.	What is a program?
+set of instructions with specific sytax / commands / rules
+usually compied or run by a computer
+usually saved on disk and re-used / re-run
+
+4.	What languages use a more easily understood vocabulary with descriptive terms like “read”, “write” or “add”?
+
+Rather than really programmer like commands, uses more English like commands
+
+Pseudo-Code / Structured English
+
+I still use Pseudo-Code a lot to plan out what I want to do.
+Makes great comments for your code.
+
+I will be doing this a LOT during term.
+
+
+5.	What is the name of the software than translates high level language statements into machine code?
+
+Compiler
+
+6.	What is a variable and why is it called a variable?
+
+Named location of memory
+
+Rather than assembler:
+	#54ABC43 = "Mike"
+
+We can use lovely Java syntax like:
+	String name = "Mike"
+
+Variables can change values
+
+Java tends to be Type Strict
+A String can onbly used to hold String data - letters, numbers, punctuation, eytc
+A int can only digits 0-9.
+
+
+
+7.	What is a method?
+
+Name for a chunk of Code
+That we can call / invoke from other methods
+and/or that Java runs automatically when our program is run.  e.g. main
+We can pass values to the method so that it can do its job
+
+
+Rather than assembler:
+	STOR X, 44
+	STOR Y, 55
+	JMP #54ABC45
+
+We can use lovely Java syntax like:
+	calcAverage (44, 55);
+
+
+8.	What is source code?
+
+Our program code
+
+
+9.	What are classes written in Java compiled into?
+
+BYTE Code.  Semi-compiled.  Almost executable, but it needs the JVM / JRE to run.
+
+
+10.	What do all Java statements end with?
+
+What do *most* Java statements end with?
+;
+
+
+11.	What is a syntax error? Give an example.
+
+Syntax Error
+	compilation error
+	we have used anm invalid command, typed something wrong, missed off a semi-colon or addred too many semi-colons or curly braces, etc
+	misspelled Java command
+
+Example:
+	System.ouP.println ();
+
+
+12.	If your code compiles and produces output when it runs does it necessarily mean it is correct? Explain.
+
+Just because your code compiles, it does NOT mean it is correct.
+You need to check your program outputs for a wide range of inputs
+Especially check boundary conditions - if statements, loops, etc
+
+
+13.	Why do we use comments in our code? Are they executed?
+
+Are they compiled into your resulting .class / .jar program ?
+If you type in a lot of comments does it make your .class / .jar program bigger ?
+	NO !!
+
+Comments
+	What your code is foing, why
+	explanations why you are doing things certain ways
+	TODO lists
+	old code / WIP code (work in progress)
+
+Completely ignored by the compiler
+
+
+Comments are good - but don't over comment.
+Go to Mike's Java videos and see "Good VS Bad Comments"
+
+
+14.	What is meant by “camel case”?
+
+public class SalariedEmployee
+
+Employee mikeOmalley ...
+double averageTemperature ...
+
+public void myMethod
+
+Constants	
+	public static final int MAX_NAMES = 100;
+
+
+
+
+
+Employee Mike_Omalley ...
+int Average_Tempoerature ...
+
+public void My_Method
+
+
+
 EOF.
