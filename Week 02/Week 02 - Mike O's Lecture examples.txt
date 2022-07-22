@@ -30,4 +30,332 @@ LAST WEEK: Week 01
 THIS WEEK: Week 02
 * Week 02 Using Data (Part 2); Methods    <--- YOU ARE HERE !
 
+
+*********************************
+Systems Development Life Cycle
+*********************************
+
+Analysis -> Design -> Development -> Testing -> Implementation -> Support -> TrAINING ->
+(test cases) (test cases)
+   ^
+   |--------------<------------<---------------|
+
+
+
+*********************************
+Automated Testing
+*********************************
+
+Test trivial and also advanced cases.
+
+Simple examples:
+	Employee e01 = new Employee ("Mike", 10);
+	if (e01.getName().compareTo ("Mike") != 0) // We have an error
+	{
+		errorCount++;
+		System.out.println ("ERROR: name test failed");
+	}
+	e01.raiseSalary (10.0);
+	if (e01.getSalary () != 11.0) // We have an error
+	{
+		errorCount++;
+		System.out.println ("ERROR: raiseSalary test failed");
+	}
+
+
+***************************
+Cost of Errors:
+***************************
+based on IBM's work:
+
+	Analysis	1x
+	Design		10x
+	Development	100x
+	Testing		1000x
+
+Huge projects fail.
+Company's spend millions of dollars on software that does NOT work, does NOT meet requirements
+and sometimes in the end they scrap the system(s) and start again.
+
+Business Analysts
+	anyone can be a business analyst, a house builder can be a good business analyst
+Maybe YES, often NO
+Do they know what designers, builders, programmers need to know ???
+You have to go through the entire systems analyses life cycle at least a few times to
+know what questions to ask, really describe how things need to work, no ambiguity, 
+no unanswered questions.
+
+The most important ANALYSIS questions: how, what, when, where, why, who
+
+Questions that you are afraid to ask - political hot potatoes, opening pandoras boxes, 
+can of worms, etc - THESE are thew questions you must ask / explore. 
+
+In my view the best Business Analysts are analyst / programmers with life cycle experience.
+
+
+*********************
+Testing
+*********************
+test all boundary conditions, edge cases, exceptions, conditions, while loop / if test conditions, etc
+
+
+
+*********************
+Make a Chocolate Cake
+*********************
+make a shopping list of ingredients
+go to the shops and buy (if needed)
+add ingredients to bowl
+	add 200g Coco
+	add ??? Coconut
+	add ??? Condensend milk
+****mix together
+	how ?  by hand ?  a fork ?  a mixer ?
+pre-heat oven to ???
+add cake mix to baking pan
+	how ?  Oiled pan ?  Baking paper ?
+cook until ready to eat
+	how long ?  20 mins ?
+remove from oven
+slice
+eat
+
+*** keep breaking steps down until you understand the full problem and have a full solution.
+
+************************
+Driving a car
+************************
+Unlock car
+Start car
+	Key in ignition, key fobs, push START button
+	Make sure car is in Park ?  
+	Make sure you press the Break pedal ?
+Put car in gear
+Check road clear all around us
+Put on indicator
+Push accelerator
+
+***********************************************************
+Calculating the value of pi to 1,000,000 decimal places
+***********************************************************
+Cacl Pi to 5 dp is easy.
+Cal Pi to 1 million dp is hard
+
+1,000,000 dp ?
+float ?  7 or 8
+double ? 15 or 16
+Number
+	BigDecimal
+Algorithm
+	some are easy to understand, "easy" to code, but not efficient
+	some are hard to understand, hard to code, but more efficient
+Single threaded ?
+Multi-threaded ?
+
+Rounding errors, etc can creep in
+so if you need 1,000,000 dps, you might need to keep intermediate values from all prior steps
+at 1,000,000,000 dp or more !!!
+
+
+************************
+Flowcharts Vs Pseduo Code
+************************
+Hard / time consuming to change / alter
+1-2 page flowchart might be OK to present to non-technical people
+Otherwise ... Pseduo Code is much better
+Pseduo Code makes GREAT comments in your code.
+
+
+
+***************************
+Complex Algorithms
+***************************
+Compression - ZIP
+Encryption / Decryption
+Network handshaking / transmission
+Database I/O
+
+
+***************************
+Calc / check body mass index
+***************************
+Where is data coming from ?
+	open file ?
+	connect to DB ?
+	User input ?
+WHILE (there are records to read)
+ read the next record
+	Calculate bmi
+		what is the formula: height, weight, ... ????
+	IF ( bmi is in the range 18.5 to 25)
+		bmi is normal
+	ELSE 
+		bmi is abnormal
+	how /where do we report the results ???
+
+***********************************
+Pseudu Code -> Programming Code
+***********************************
+Start with a general solution, don't get bogged down with detail / issues
+break it down to add as much detail as you need to fully understand / solve the problem
+then write the code
+Make the Pseudu Code a comment in your program
+
+
+*******************************
+Question One 
+*******************************
+In a Java program how would you determine if an integer was even or odd?
+
+Even number = evenly divisible by 2 (no remainder)  Modulo arithmetic --> % operator
+if (num % 2 == 0) // Even
+
+if (count % 10000) == 0) System.out.print (".");
+count++;
+
+
+*******************************
+Question Two
+*******************************
+What is the purpose of a variable declaration? What information does it provide?
+
+Tell compiler you need a variable and tell the type of data.
+
+int k = 5;
+int k2 = "Mike"; // ERROR
+Java is Strictly Typed
+
+JavaScript - all of these are valid code.  HORRIBLE !  Can create horrible code.
+int k = 5;
+k = "Mike";
+k = false;
+
+
+
+*******************************
+Question Three
+*******************************
+Why are programmers required to add meaningful comments to their source code?
+
+Help you know what you have done and why in the future
+Help other programmers understand what you have done and why 
+
+See my YouTube video: Good Comments VS Bad Comments
+
+
+
+*******************************
+Question Four
+*******************************
+
+For each program segment, read the code, and write the output. Do not execute the programs on a computer. (You can check your answer by running the code on a computer after you have predicted the output, but not before.)
+
+(a)	What is output by the following code? 
+
+public class Operator { 
+      public static void main( String args[] ) { 
+            int x = 3; 
+            int y = 2; 
+           System.out.println( x * y + 9 / 3 ); 			// 9
+     } 
+}
+
+(b)	What is output by the following line of code?
+System.out.println( ( 8 * 4 * 2 + 6 ) / 2 + 4 ); 		// 39
+
+(c)	What is output from the following line of code? 
+System.out.println((1.0 / 4 + 2) * 4);			// 9
+System.out.println((1 / 4 + 2) * 4);				// 8
+System.out.println((1 / 4 + 2.0) * 4);			// 8
+System.out.println((1 / 4.0 + 2) * 4);			// 9
+
+
+NOTES:
+BOMDAS / BODMAS
+
+Added complexity:
+	Integer Division != Floating Point Division
+	++ / --
+	Modulo operator
+	etc
+
+Recommendation: Always use brackets to make it realy clear which parts of 
+a calc should happen in which order.
+
+
+
+*******************************
+Question Five
+*******************************
+
+Determine if there are errors in this following program segment. If there is an error, specify whether it is a logic error or a compilation error, specify the line number in the program and write the corrected code. If the code does not contain an error, write "no error". There may be more than one error in the program segment.
+		
+1: import java.Scanner; 
+2: public class Output {
+3: 
+4:        public static void main(String [] args) {
+5:               int num 
+6:              Scanner input = Scanner( in ); 
+7:              num = input.int(); 
+8:        } 
+9: }
+
+Compilation / Syntax
+1: import java.util.Scanner; 
+
+2 x Compilation / Syntax
+6:              Scanner input = new Scanner( System.in ); 
+
+Compilation / Syntax
+5: int num = 0;	} either of these is correct
+5: int num;	}
+
+Compilation / Syntax
+7: num = input.nextInt();
+
+
+
+*******************************
+Question Six
+*******************************
+What is an import declaration and where does it appear in a Java source code file?
+Why have them ?
+
+After Package and before public class
+Bring in extra functionality that isn't available by default in your Java Program.
+e.g. 
+import java.util.Scanner; // for getting user input
+import java.util.Date;    // for working with dates
+import java.util.Random;  // for using poor quality random numbers
+
+Or bring in all of the utils package:
+import java.util.*;
+
+
+*******************************
+Question Seven
+*******************************
+A computer accesses data that is encoded in binary. How are the following stored in a computer:
+•	Text
+•	Numbers (integers, floating point)
+•	Images
+
+Refer to http://csfieldguide.org.nz/en/chapters/data-representation.html  They explain it exceptionally well and their cartoons are great. Note the discussion on Unicode and ASCII codes for character data. 
+
+
+1, 0
+
+program executable code, data, variables, ... is stored as 1's and 0's
+
+Transputer = 1.. 10, light based
+
+TEXT - ASCII, EBCIDIC - show the ASCII table and walk through key areas - digits, Upper case, lower case, etc
+Numbers:	1,0 	2's complement,
+Images header, 0's,1's   24 bit colour, 8 R, 8 G 8, 8 B
+0.255
+RGB
+16 million
+
+
+
 EOF.
