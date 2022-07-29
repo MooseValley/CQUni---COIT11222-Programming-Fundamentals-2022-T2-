@@ -32,4 +32,350 @@ THIS WEEK: Week 03
 
 
 
+************************
+Q1A
+************************
+
+age_=_10_
+amount_=_310.5692
+Name:_David age:_10
+_amount:_310.568
+
+
+Key:
+_,- = space
+
+
+
+ System.out.printf("Name: %10s age: %d%n amount: %.3f%n", name, age, amount);
+
+Name:------David-age:-10
+-amount:-310.569
+
+ System.out.printf("Name: %-10s age: %d%n amount: %.3f%n", name, age, amount);
+
+Name:-David------age:-10
+-amount:-310.569
+
+
+ System.out.printf("Name: %s age: %5d%n amount: %.3f%n", name, age, amount);
+
+Name:_David age:_---10
+_amount:_310.569
+
+
+ System.out.printf("Name: %s age: %d%n amount: %,10.3f%n", name, age, amount);
+         
+Name:_David age:_10
+_amount:_---310.569
+
+
+
+double amount = 99310.5692;
+ System.out.printf("Name: %s age: %d%n amount: %,10.3f%n", name, age, amount);
+
+Name:_David age:_10
+_amount:_99,310.569
+
+
+double amount = 8899310.5692;
+ System.out.printf("Name: %s age: %d%n amount: %,10.3f%n", name, age, amount);
+
+Name:_David age:_10
+_amount:_8,899,310.569
+
+
+String name = "David";
+
+ System.out.printf("Name: %3s", name);
+
+David
+
+
+
+printf() VS  String.format (.....);
+
+I use String.format only.
+because often we want the formatted String without outputting it 
+to the Console screen.  e.g. GUI apps.
+
+
+
+************************
+Q1B
+************************
+
+       int age = 10;
+       double amount = 310.5692;
+       String name = "David";
+
+
+System.out.printf("%s is %d", name, age); // David is 10 <-- Correct
+
+System.out.printf("%10s is %d", name, age); // -----David is 10
+
+
+************************
+Q1C
+************************
+
+       int age = 10;
+       double amount = 310.5692;
+       String name = "David";
+
+// David has saved $310.57 and he is only 10 years old
+ System.out.printf("%s has saved $%.2f and he is only %d years old", name, amount, age);
+
+
+
+************************
+Q2
+************************
+
+In method A
+In method B about to call method C
+In method C about to call method A
+In method A
+In method C - after method A
+In method B - after method C
+
+
+
+
+Extra:
+
+public class W03Q02A2
+{
+   public static void main(String[] args)
+   {
+       int sum = 10;
+       
+       sum = method1(sum);
+       
+       method2(sum);
+       
+       System.out.printf("%d", sum); 
+   }
+   
+   
+   public static int method1 (int val)
+   {
+       return val + 5;
+   }
+   
+   public static int method2 (int val)
+   {
+       return val + 7;
+   }
+
+}
+
+
+Output:
+15
+
+
+
+Extra #2:
+
+public class W03Q02A3
+{
+   public static void main(String[] args)
+   {
+       int sum = 10;
+       
+       sum = method1(sum); // 15
+       
+       sum *= method2(sum); // 450
+       
+       System.out.printf("%d", sum); 
+   }
+   
+   
+   public static int method1 (int val)
+   {
+       return val + 5;
+   }
+   
+   public static int method2 (int val)
+   {
+       val = val + method3(); // 23
+       return val + 7;        // 30
+   }
+   
+   public static int method3 ()
+   {
+       return 8;
+   }
+
+}
+
+
+Output:
+450
+
+
+
+Extra #3:
+
+public class W03Q02A4
+{
+   public static void main(String[] args)
+   {
+       int sum = 10;
+       
+       String name = "Mike";
+       
+       name = method1(name); // Mike12345
+       
+       name = method2(sum, name);  // 11Frankie11
+       
+       System.out.printf("%s, %d", name, sum); 
+   }
+   
+   
+   public static String method1 (String str)
+   {
+       if (str.length() < 5)
+          str = str + "12345";
+       else
+          str = str + "67890";
+          
+       return str;
+   }
+   
+   public static String method2 (int val, String str2)
+   {
+       val = val + 1;
+       str2 = "Frankie";
+       
+       return val + str2 + val; // 11Frankie11
+   }
+}
+
+Output:
+11Frankie11, 10
+
+
+
+Pass By Value / Copy !
+	int, float, bool, char, .... primitive types
+	a copy of the data is passed into the method
+	the original value - outside of the method - is not changed by the method
+	
+Pass By Reference
+	String, Date, Employee, ....
+	Reference Types
+	i.e. memory address of data is passed to method
+	anything method does to data direcly affects the original
+	because it is working on the data at the same memory location
+
+Scope
+	where is something accessable
+	where in your code is a variable valid to use / access
+	
+NOTE:
+String is IMMUTABLE
+String cannot be changed !!!
+
+String name = "Mike";
+name = "Frankie";
+
+
+String name = "Mike";
+
+name [@54EA12] --------> "Mike"
+
+name refers to a memory location where the String data "Mike" is stored.
+
+
+name = "Frankie";
+
+     [@54EA12] --------> "Mike"
+name [@76AAEF] --------> "Frankie"
+
+name now refers to a NEW memory location where the String data "Frankie" is stored.
+
+
+
+Extra #4:
+
+public class W03Q02A5
+{
+   public static void main(String[] args)
+   {
+       int sum = 10;
+       
+       String name = "Mike";
+       
+       method1(name);
+       method2(sum);
+       
+       System.out.printf("%s, %d", name, sum); 
+   }
+   
+   
+   public static String method1 (String str)
+   {
+       if (str.length() < 5)
+          str = str + "12345";
+       else
+          str = str + "67890";
+          
+       return str;
+   }
+   
+   public static String method2 (int val)
+   {
+       return val + 5;
+   }
+
+}
+
+
+name [@54EA12] --------> "Mike"
+str  [@76AAEF] --------> "Mike12345"
+
+
+Output:
+Mike, 10
+
+
+
+Extra #5:
+
+public class W03Q02A6
+{
+   public static void main(String[] args)
+   {
+       int sum = 10;
+       
+       String name = "Mike";
+       
+       name = method1(name);
+       sum  = method2(sum);
+       
+       System.out.printf("%s, %d", name, sum); 
+   }
+   
+   
+   public static String method1 (String str)
+   {
+       if (str.length() < 5)
+          str = str + "12345";
+       else
+          str = str + "67890";
+          
+       return str;
+   }
+   
+   public static String method2 (int val)
+   {
+       return val + 5;
+   }
+}
+
+Output:
+Mike12345, 15
+
 EOF.
