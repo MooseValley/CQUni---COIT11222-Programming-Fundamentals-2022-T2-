@@ -30,4 +30,230 @@ LAST WEEK: Week 04
 THIS WEEK: Week 05
 * Week 05 Making decisions (Selection Statements)    <--- YOU ARE HERE !
 
+
+
+*********************
+SCOPE
+*********************
+* Where something is visible / accessible
+
+
+public class MyClass
+{
+   private static final START_ACCOUNT_ID = 1000; 
+   private double balance;
+   
+
+   public void myMethod (String name)
+   {
+      :::::
+      int val ...
+      
+      System.out.println ("Last used account id: " + START_ACCOUNT_ID); // This is OK - static data
+
+      :::
+      {
+      }
+
+      :::::
+   }
+
+   public static void myStaticMethod (MyClass myClass) // pass an instance to the method
+   {
+      System.out.println ("Last used account id: " + START_ACCOUNT_ID); // This is OK - static data
+
+      myclass.myMethod ("Mike"); // using an instance to call an instance method.
+
+      MyClass myClass2 = new MyClass (); // Create an local instance
+      myclass2.myMethod ("Mike"); // using an instance to call an instance method.
+
+   }
+}
+
+
+name has method scope - it is accessible / usable anywhere inside myMethod()
+val has scope from the line it is declared on until the enclosing }
+balance has class scope - any instance method in the class can use / access
+START_ACCOUNT_ID has class scope - any instance and any static method in the class can use / access
+Static methods *can* use instance data - but they must either create an instance of the class or be 
+passed an instance of the class
+Static data can be used ANYWHERE inside the class - any instance or static method.
+
+private data or methods: only methods of the current class can access / use
+public data or methods: any method of any class can access / use.  Global data, global methods
+protected data or methods:  default for a class, any method of any class in the current package can access / use.
+
+Rule of Thumb:
+* Keep your data and methods private unless there is very good reason for them not being private.
+
+
+
+public class BankAccount
+{
+   private double balance;
+
+   ::::
+   public void deposit (double amount)
+   public void withdraw (double amount)
+   public void calcInterest (double rate)
+   ::::
+}
+
+All of these methods would have very strict rules they need to enforce.
+e.g. withdraw amount > 0 and < 500 per day
+
+If we made balance public ... what would happen ???
+
+In any class anywhere we could say:
+   BankAccount mikesAccount = new BankAccount ();
+   ::::
+   mikesAccount.balance = mikesAccount.balance + 1000000000;
+
+Bank would not be in business very long.
+Rules are being bypassed.
+Anything anywhere can change the class data without regard for correctness, rules, ...
+
+
+************************
+Shadowed Fields
+************************
+public class Employee
+{
+  private String name;
+
+  :::::::
+
+  public void setName (String name) // Shadowed Fields
+  {
+    name = name;  // name is the local field in the method header.  Class field is NOT affected / changed.
+  }
+
+  public void setName2 (String name)  // Shadowed Fields
+  {
+    this.name = name; // this.name means for the current class object.  PREFERRED WAY !!
+  }
+
+  public void setName3 (String n)
+  {
+    name = n; // No ambiguity here !
+  }
+
+  :::::::
+}
+
+
+Primative Types
+    int, double, boolean, char, long, float, byte ....
+    value is stored where the field is located
+
+Reference Types
+    String, Date, Employee, Product, .....
+    They store the memory address of the data
+    Double hop
+
+
+if(x >= 10)
+System.out.println("statement 1");
+System.out.println("statement 2");
+System.out.println("statement 3");
+
+exactly the same as:
+
+if(x >= 10)
+{
+  System.out.println("statement 1");
+}
+System.out.println("statement 2");
+System.out.println("statement 3");
+
+if, while, for, etc end at the closing brace (if open/ close pair) or at the next semi-colon ;
+
+Be very careful !!!
+
+
+int x = 8;
+
+if(x >= 10);
+{
+  System.out.println("statement 1");
+}
+System.out.println("statement 2");
+System.out.println("statement 3");
+
+{{{{{{ System.out.println("statement 4"); }}}}}}
+
+
+1d.	Rewrite the code above (including the correct indentation) so 
+that all three statements will ONLY be executed if x is greater 
+than or equal to 10.
+
+if(x >= 10) 
+{
+    System.out.println("statement 1");
+    System.out.println("statement 2");
+    System.out.println("statement 3");
+}
+
+// Horrible, but technically correct
+if(x >= 10)
+    System.out.println("statement 1");
+if(x >= 10)
+    System.out.println("statement 2");
+if(x >= 10)
+    System.out.println("statement 3");
+
+
+
+*****************************************************************
+Comparing Reference Types --- Be VERY CAREFUL !!!
+*****************************************************************
+
+String name1 = "Mike";
+String name2 = "Mike";
+if (name1 == name2) 
+  System.out.println("same");
+else
+  System.out.println("different");
+
+Strings and other Reference Types
+* You cannot use ==, >=, <=, >, <, !=, ..... you will NOT get the right answer !!!
+* Why ?  You are comparing memory addresses NOT the data they refer to !!!
+
+With String:
+    compareTo
+    compareToIngoreCase
+    equals
+    equalsIngoreCase
+
+
+String name1 = "Mike";
+String name2 = "Mike";
+if (name1.compareTo (name2) == 0) 
+  System.out.println("same");
+else
+  System.out.println("different");
+
+
+Date
+    equals
+    compareTo
+
+
+
+****************************************************
+*** Homework: Week 5 Q05 - Mike O's Extras
+****************************************************
+
+Create an Order class
+get inputs from user - productId, num sold, and use these to create an Order object
+    Order order = new Order (.......);
+
+and then use this to lookup the product details and calculate the totals / generate the output:
+    System.out.println(order.toString() );
+
+Everything between the ***** above should go into Order class methods.
+
+Bring along to next class and discuss if any issues !!
+
+
 EOF.
