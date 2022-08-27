@@ -30,4 +30,47 @@ LAST WEEK: Week 05
 THIS WEEK: Week 06
 * Week 06 Looping    <--- YOU ARE HERE !
 
+
+
+Sentinel value - a key value / limit to how to how many times you want to loop
+
+for (int k = 0; k < 10; k++)
+{
+    ::::
+}
+
+int k = 0;
+while (k < 10)
+{
+    ::::
+    k++;
+}
+
+The above 2 loops have the same effect - loop 10 times.
+But there is 1 KEY difference - what is it ???
+
+A.  k is available AFTER the while loop ends.
+
+We can re-write the for loop to do the same (k is available after for loop ends):
+
+int k = 0;
+for (; k < 10; k++)
+{
+    ::::
+}
+
+
+for (;;;)
+
+
+Stay thre HELL away from solutions.
+because you will look at them and think "Oh that's looks easy"
+and you wont try yourself
+and you wont learn
+
+Study Committment for this course is 12 hour per week MINIMUM.
+At least 10 hours of that should be writing code, solving pronlems, exploring course topics.
+If you fall behind or are struggling, you may need to do a LOT more than 12 hours pw.
+
+
 EOF.
