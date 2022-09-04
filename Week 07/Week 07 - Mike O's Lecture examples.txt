@@ -30,4 +30,118 @@ LAST WEEK: Week 06
 THIS WEEK: Week 07
 * Week 07 Arrays    <--- YOU ARE HERE !
 
+
+******************************
+1D arrays
+******************************
+row of pigeon holes / mail boxes
+Array of size n, indexes number 0 ... n-1
+Array of size 20 => 20 pigeon holes, 20 locations where you can store data, indexes 0-19
+
+Pascal -5, 20
+
+******************************
+2D Arrays
+******************************
+Grid of pigeon holes / mail boxes
+2 Indexes.  M x N array has indexes 0 ... N-1 and 0 ... M-1
+
+3D Arrays
+Cube of data
+3 indexes
+
+After 3D don't try and visualise the data, just remember the order of the indexes !
+
+4D ... 
+Array[salesPersonId][yearId][monthId][productId]
+4 indexes
+
+5D
+Array[salesPersonId][yearId][monthId][productId][cityId]
+5 indexes
+
+Order of indexes is very important
+    array [20][30]  is NOT the same location as array[30][20]
+
+
+Text book: It very rare you will go beyond 2D or 3D ... absolute rubbish
+It very rare you have less than 3D
+
+Part B:  Tutorial Questions
+
+Question 1 
+
+Write pseudocode for the following:
+b.	Adding an element to an unsorted array.
+
+Assume: we have an array of size 20, but it only contains 5 elements so far, so we will add the new element
+when we find an empty (null) pigeon hole.
+
+*** Java-ish code:
+int index = 0;
+while (array [index] != null) && index < array.length)
+{
+   index++;
+}
+
+if (index < array.length)
+   array[index] = new element
+
+
+*** Pseudo Code:
+
+inserted = no
+Loop through array while inserted = no and not at end of array
+    if empty pigeon hole found
+        insert new element
+        inserted = yes
+if inserted = no
+   display "no room in the array"
+
+
+
+c.	Adding an element to a sorted array.
+
+Assume: array is sorted in ascending order.
+If array is partly filled (or empty), all of the empty (null) pigeon holes are at the end of the array
+
+*** Pseudo Code:
+
+inserted = no
+Loop through array while inserted = no and not at end of array
+    if new element < current pigeon hole value
+        shuffle down all array elements from now to end of array
+            *** expand this.  Hint: work backwards from end of array so you don't overwrite any locations
+            *** what about if array is full ???  Error ?  Discard last item ?
+        insert new element
+        inserted = yes
+    else if pigeon hole is empty (null)
+        insert new element
+        inserted = yes
+
+if inserted = no
+   display "no room in the array"
+
+
+
+Question 3 
+What benefits does the enhanced for statement provide for array processing? What are its limitations?
+
+for (Object i : array) ...
+for (Object i : arraylist) ...
+
+Pros
+    Less code, simpler
+    we can just use the Object inside the loop, no need for array or arraylist notation
+Cons
+    No counter
+    If you need a counter inside the Enhanced For Loop you need to create one and maintain it
+
+int counter = 0;
+for (Object i : arraylist) ...
+{
+    counter++;
+    :::
+}
+
 EOF.
