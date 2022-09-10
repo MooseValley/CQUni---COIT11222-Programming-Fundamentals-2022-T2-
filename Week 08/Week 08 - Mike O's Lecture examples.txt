@@ -30,4 +30,218 @@ LAST WEEK: Week 07
 THIS WEEK: Week 08
 * Week 08 Advanced Array Concepts    <--- YOU ARE HERE !
 
+
+NO SOLUTIONS
+
+One Project open in Netbeans only.
+
+Arrays, ArrayList, Sorting
+
+Employee e01 = new Employee (); 
+// Both of these lines of code are exactly the same, have exactly the same outcome:
+System.out.println (e01);             // Implicit call of toString()
+System.out.println (e01.toString() ); // Explicit call of toString()
+
+
+---------------------------------------
+** Size of an array
+---------------------------------------
+
+String[] namesArray = new String[20];
+
+namesArray.length  // 20
+// Use instead of hard-coding 20 (or whatever) everywhere throughout your program
+// It is a property of the array, not a method - no round brackets !
+
+for (int k = 0; k < namesArray.length; k++) 
+    ::::
+
+
+
+---------------------------------------
+*** Sort Integers
+---------------------------------------
+
+int[] intArray = ....
+
+for (int k = 0; k < intArray.length - 1; k++) 
+    ::::
+    if (intArray[k] > intArray[k + 1]) // Assume Ascending Sort
+    {
+        int temp        = intArray[k];
+        intArray[k]     = intArray[k + 1];
+        intArray[k + 1] = temp;
+    }
+
+---------------------------------------
+*** Sort People
+---------------------------------------
+
+People[] peopleArray = ....
+
+for (int k = 0; k < peopleArray.length - 1; k++) 
+    ::::
+    if (peopleArray[k].getAge() > peopleArray[k + 1].getAge()) // Assume Ascending Sort of Age
+    //if (peopleArray[k].getAge() < peopleArray[k + 1].getAge()) // Assume Desending Sort of Age
+    //if (peopleArray[k].getHeight() > peopleArray[k + 1].getHeight()) // Assume Ascending Sort of Height
+    {
+        People temp        = peopleArray[k];
+        peopleArray[k]     = peopleArray[k + 1];
+        peopleArray[k + 1] = temp;
+    }
+
+
+
+---------------------------------------
+** Sort Bubble
+---------------------------------------
+ - see extra examples worked through in class.
+
+
+---------------------------------------
+** ArrayList
+---------------------------------------
+    get()
+    size()
+    add()
+    remove()
+    clear()
+and many more.
+
+
+
+
+--------------------------------------
+Question Two
+--------------------------------------
+When might you use an array in preference to an ArrayList?
+
+How many dimensions can you have for an ArrayList ?
+How many dimensions can you have for an Array ?
+
+int [][][] gameCharacter = new int [...][...][...];
+ArrayList<int><int><int> = ERROR  how ???
+ArrayList<int, int, int> = ERROR  how ???
+
+Hint: create a class that contains the 3 ints for a simple pixel 
+of the GameCharacterPixel object 
+e.g. GameCharacterPixel class
+and then create the ArrayList of that
+ArrayList<GameCharacterPixel> ....
+
+
+Speed ?  
+Efficiency ?  
+Similar ?
+BUT array you get the data immediately
+with an arraylist you have to call a method (get) - and 
+this does have overhead ...
+Array is more efficient / fast
+
+Fixed / dynamic data ?
+Don't know how much data ?  Number of items increases ?  Use ArrayList
+If you know you need to store N items and it wont change, maybe use Array ?
+
+
+--------------------------------------
+Question Three
+--------------------------------------
+When should binary search be used in preference to linear search?
+
+Binary Search = super efficient, super fast
+but only for a specific type of data ... what is it ???
+Data must be sorted 
+Data that changes often, cost of sort + binary search 
+may exceed cost of linear search ?
+How often do you need to search the data ?
+Depends on your data, what you are doing, how often, shared resources, etc ?
+
+
+--------------------------------------
+Question Four
+--------------------------------------
+Why is binary search more efficient than linear search?
+Divides the data in half again and again until either a match is found or
+you run out of data to search (no match)
+Converges to an answer VERY fast.
+
+Linear Search
+    loop through array structure
+        check each value for match
+            display found when found
+
+If Linear Search of 1,000 items takes n seconds
+How long will search of 10,000 items take ? 10n
+How long will search of 100,000 items take ? 100n
+i.e. if you double the amount of data, you double the time.
+
+Binary Search
+    start in middle of array
+    divide array in 2 and check middle of that part of the array
+    keep going until you find a match or no more data to search.
+
+If Binary Search of 1,000 items takes n seconds
+How long will search of 10,000 items take ?   n + 0.0001  (sample only)
+How long will search of 100,000 items take ?  n + 0.001
+i.e. if you double the amount of data, you increase the time by a very small amount.
+
+
+--------------------------------------
+Question Five
+--------------------------------------
+Suppose that a sorted list contains duplicate entries and 
+all duplicates are to be found. How would you use binary search 
+to find all duplicates?
+
+
+10 44 55 55 55 60  99 120 ....
+          |
+
+Simple answer:
+    Adapt Binary Search to find the first value
+    and then just step forward until the data no longer matches
+
+
+HINT:
+* explore these topics for Homework
+* write the code, ...
+
+
+
+--------------------------------------
+3D Games, Operating System, Encryption, Compression, ...
+--------------------------------------
+You need the utmost speed possible ...
+
+If you don't declare data or method as public or private ... 
+the default is protected.
+
+protected can mean you don't need to use setters / getters for 
+some trusted classes in your project (classes in the same package)
+
+If you don't need to call methods and can instead do this:
+
+    myObj.locationX = 100; // Faster, no call method and return overheads
+
+instead of:
+    myObj.setLocationX (100);
+
+
+Assembler
+
+myObj.locationX = 100;
+
+    MOV myObj.REGX, 100
+
+myObj.setLocationX (100);
+
+    PUSH register, flags onto stack
+    JMP :100h
+    POP register, flags from stack
+
+100h
+    MOV myObj.REGX, 100
+    RET
+
+    
 EOF.

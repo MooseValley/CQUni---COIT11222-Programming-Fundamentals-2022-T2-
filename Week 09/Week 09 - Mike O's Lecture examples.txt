@@ -30,4 +30,12 @@ LAST WEEK: Week 08
 THIS WEEK: Week 09
 * Week 09	Characters, Strings and the StringBuilder    <--- YOU ARE HERE !
 
+
+Week 12 work through a past exam.
+If you can before class, read and work through the most recent past exam -> Handbook
+And we will discuss in class.
+Past Exams - No solutions given
+Plenty of Hints, tips, suggestions given - but no solutions
+
+
 EOF.
