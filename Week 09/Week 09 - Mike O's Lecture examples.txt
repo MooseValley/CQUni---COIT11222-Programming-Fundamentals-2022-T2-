@@ -38,4 +38,102 @@ Past Exams - No solutions given
 Plenty of Hints, tips, suggestions given - but no solutions
 
 
+
+
+*****************************************
+Command Line parameters
+*****************************************
+
+main
+
+	public static void main (String[] args)
+	
+c:\>java MyProgram.class abc 123 45
+
+args [0]	"abc"
+args [1]	"123"
+args [2]	"45"
+
+Everything comes in as a String
+
+if integer required:	Integer.parseInt() ...
+if double required:	Double.parseDouble() ...
+public class Main {
+2
+3   public static void main(String[] args) {
+4       String[] article = {"the ", "a ", "some ", "any "};
+5       String[] noun = {"boy", "girl", "town", "car"};
+6       String[] verb = {" drove", " jumped", " ran ", " walked"};
+7       String[] preposition = {" to ", " from ", " over ", " under "};
+8      
+9       for (int i = 0; i <2; i++) {
+10          int article1 = i;
+11          int noun1 = i;
+12          int verb1 = i;
+13          int preposition1 = i;
+14          int article2 = i;
+15          int noun2 = i+2;
+16
+17	         StringBuilder sb = new StringBuilder();
+18
+19          sb.append(article[article1]+noun[noun1]);
+20          sb.append(verb[verb1]+preposition[preposition1]);
+21          sb.append(article[article2]+noun[noun2]+".\n");
+22          sb.setCharAt(0, Character.toUpperCase(sb.charAt(0)));
+23          System.out.printf("i = %d The string is:%n", i);
+24          System.out.print(sb.toString());
+25          System.out.println();
+26      }
+27   }
+28 }
+	
+	
+	article2
+	preposition1
+	verb1
+	noun1
+i	article1 (i)	noun2(i+2)	Operation     sb 
+---	------------	----------	----------    ---
+0 	0		2		1st append    the boy
+                                        2nd append     drove to 
+                                        3rd append    the town
+                                        Uppercase 1st T
+*** Output:
+i = 0 The string is: 
+The boy drove to the town
+
+1      1               3		1st append    a girl
+                                        2nd append     jumped from 
+                                        3rd append    a car
+                                        Uppercase 1st A
+
+*** Output:
+i = 1 The string is: 
+A girl jumped from a car
+
+
+*** All output:
+i = 0 The string is: 
+The boy drove to the town
+i = 1 The string is: 
+A girl jumped from a car
+
+
+
+**************************************************
+Assessment Item 1B - Phase 2
+**************************************************
+
+Review Phase 2 in assignment spec: AsessmentItem1B_V10.docx
+Page 6
+
+Mike O will mark this week’s tutorial and assessment – 
+Make sure you submit by Sunday, 6 PM
+Extra time allowed for students to allow them to do a great submission
+After we went through this in class.
+
+Email Jacqui - asking her to remark Assesment Item 1A for Carlo
+Email Jacqui - and say student submitting this week 's assessment by Sunday, 6 PM
+
+
 EOF.
