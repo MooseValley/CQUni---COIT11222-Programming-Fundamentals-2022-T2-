@@ -30,4 +30,126 @@ LAST WEEK: Week 09
 THIS WEEK: Week 10
 * Week 10	Exceptions    <--- YOU ARE HERE !
 
+
+*** Exception Handling
+
+    try
+    catch
+    finally
+    throw / throws
+
+Allow you to handle errors without your program crashing.
+You can handle errors gracefully : produce nice error messages, etc.
+
+
+try
+{
+    // any code that might cause an Exception goes here
+}
+catch (....)
+{
+   // Deal with the exception
+   // Display an error to the user, 
+   // Set the return value for a method to -1 (or whatever) to indicate an error condition to the caller
+   // In serious cases, you might even Exit the program.
+}
+
+Whatever you do:
+* Do NOT fail silently
+* The absolute minimum is printing an error to the Console window and printStackTrace()
+* Ideal: you generate messages that will be seen by anyone who needs to know about the error
+* e.g. for a User, use JOptionPane.showMessageDialog
+* For far more serious errors, such as jobs running overnight - send email, SMS, etc
+
+
+
+For example this type of code would be VERY BAD:
+
+try
+{
+    // try and save user's data to file
+}
+catch (....)
+{
+   // Do nothing - user has no idea that a Save has failed !
+}
+
+
+A try can have multiple Catches if you want to handle each type of possible exception differently:
+
+try
+{
+}
+catch (ExceptionType1 ..)
+{
+}
+catch (ExceptionType2 ..)
+{
+}
+catch (ExceptionType3 ..)
+{
+}
+
+
+Or, if you want to catch multiple exceptions and deal with them all the same way (in the same catch):
+
+try
+{
+}
+catch (ExceptionType1 | ExceptionType2 | ExceptionType3 err)
+{
+    System.out.println ("ERROR: .....");
+    err.printStackTrace();
+}
+
+
+
+*** Throw
+
+int age = -1;
+
+try
+{
+  age = Integer.parseInt (ageStr);    
+
+  if ((age < 1) || (age > 120) )
+  {
+     //System.out.println ("Error: age must be between 1 and 120");
+     throw new NumberFormatException ();
+  }
+}
+catch (NumberFormatException err)
+{
+   System.out.println ("Error: age must be between 1 and 120");
+}
+
+
+*** Finally
+
+contains code that you to run no matter what.
+
+try
+{
+    // try and save user's data to file
+    // Open File
+    // Write File
+}
+catch (....)
+{
+   // If we did nothing here, user has no idea that a Save has failed !  BAD !
+}
+finally
+{
+   // Close file.
+   // This might also cause an Exception ... need another try catch ??
+}
+
+
+
+
+            *
+           *
+          *
+**********
+
 EOF.
