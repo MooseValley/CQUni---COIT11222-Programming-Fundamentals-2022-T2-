@@ -30,4 +30,86 @@ LAST WEEK: Week 10
 THIS WEEK: Week 11
 * Week 11	Files Input and Output    <--- YOU ARE HERE !
 
-EOF.
+
+
+************************************************
+*** Files Input and Output
+************************************************
+
+Recap / Summary
+
+Many ways to read / write files in Java
+    Formatter - nice and easy
+    Scanner - nextInt, nextLine, etc
+    BufferedReasder / Writer
+    Input/Output Streams
+
+Recommend you find 1 way to read files and 1 way to write files that you like best and use those.
+Writing: I recommend Formatter
+Reading: I recommend Scanner
+(Just like this week's tutorial questions use !!!)
+
+
+********************
+Pseudo code:
+********************
+
+Reading a file pseudo code:
+    Open a File for Input
+    While there is still data in the file
+        read the file
+        create objects, add to array / ArrayList
+    Close file
+
+Writing a File pseudo code:
+    Open a File for Output (create)
+    While there is more data to write (from your array or arraylist ...)
+        write data to file
+    Close File
+
+
+********************
+Exception Handling
+********************
+
+You must use Exception Handling (try, catch, throw, throws, ....)
+Your code will NOT compile without it !!
+-> File I/O raises Checked Exceptions
+
+
+*************************
+*** try (with resources)
+*************************
+
+Old Way - before Try with Resources
+
+try 
+{
+    Open a File for Output (create)
+    While there is more data to write (from your array or arraylist ...)
+        write data to file
+    //Close file <---- why NOT here ????
+}
+catch (....)
+{
+    :::::
+}
+finally 
+{
+    Close File
+}
+
+try (Open a File for Output (create) )
+{
+    While there is more data to write (from your array or arraylist ...)
+        write data to file
+}
+catch (....)
+{
+    :::::
+}
+
+Java takes care of closing files, cleaning up after exceptions, etc.
+
+
+  EOF.
