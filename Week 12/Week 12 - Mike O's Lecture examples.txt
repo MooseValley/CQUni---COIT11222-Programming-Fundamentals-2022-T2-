@@ -1,0 +1,88 @@
+******************************************************
+COIT11222 Programming Fundamentals (2022-T2)
+Week: 12
+Course WEB Page (Moodle):         https://moodle.cqu.edu.au/course/view.php?id=37697
+Course Coordinator:               Dr. Jacqueline Jarvis, Brisbane Campus, Contact: +61-07-3023-4238, Email: j.jarvis@cqu.edu.au
+Rocky Teacher (Part-Time):        Mike O'Malley, m.omalley@cqu.edu.au
+Mike O's GitHub for course/term:  https://github.com/MooseValley/Uni-COIT11222-Programming-Fundamentals-2022-T2
+Mike O'Malley's Java Videos (incl JavaFX, etc):            http://tinyurl.com/MikesJavaVideos
+Mike O'Malley's JavaFX + Netbeans + Scene Builder Videos:  http://tinyurl.com/MikesJavaFXVideos
+******************************************************
+
+ROAD MAP:
+Week 01 Creating Java Programs; Using Data (Part 1)
+Week 02 Using Data (Part 2); Methods
+Week 03 Methods
+Week 04 Classes and Objects
+Week 05 Making decisions (Selection Statements)
+Week 06 Looping
+Week 07 Arrays
+Week 08 Advanced Array Concepts
+Week 09	Characters, Strings and the StringBuilder
+Week 10	Exceptions
+Week 11	Files Input and Output
+Week 12	Design; Ethics; Review    <--- YOU ARE HERE !
+
+
+LAST WEEK: Week 11
+* Week 11	Files Input and Output
+
+THIS WEEK: Week 12
+* Week 12	Design; Ethics; Review    <--- YOU ARE HERE !
+
+
+
+*** Pass by Value
+
+int k = 5;
+char c = 'A';
+
+method1 (k, c);
+
+any changes made to the values passed in will not affect the variables k, c outside of the method.
+a copy of the data is passed into the method
+Primitive types are Passed by Value
+
+
+*** Pass by Reference
+
+Date d = new Date();
+Employee e = new Employee ();
+
+method2 (d, e);
+
+the memory addresses are passed 
+inside the method, any changes to those objects WILL be reflected back in the original items d, e.
+Reference types are Passed by Reference
+
+If you are passing reference types to a method and you want to make sure that the method cannot change the originals,
+what do you do ?
+A. One way: create a copy of the items you are passing and pass those into the method.
+(There ARE OTHER WAYS).
+If the method changes them, it doesn't matter, the copies wont be used again.
+
+Note: this does NOT create a copy !!!
+
+Employee e1 = new Employee ();
+Employee e2 = e1;
+
+e1 and e2 are both referring to the same location in memory where the Employee is stored.
+
+
+How do you create a true COPY ?
+For us at this stage with what we have done so far: use Accessors and Mutators
+
+Employee e1 = new Employee (::::::);
+Employee e2 = new Employee ();
+
+e2.setName (e1.getName() );
+e2.setAge  (e1.getAge() );
+::: etc
+
+We could create a clone() method inside Employee which does the set... (get...() ).
+and then we could do this to create a true copy:
+
+e2.clone (e1);
+
+
+EOF.
